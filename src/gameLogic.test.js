@@ -1,4 +1,4 @@
-import { flipBoard, flipBetweenIndex, updateRow, calculateWinner, updateBoardAfterMarkerPlaced, arrayStuff, updateDiagonaly } from './Board'
+import { flipBoard, flipBetweenIndex, updateRow, calculateWinner, updateBoardAfterMarkerPlaced, arrayStuff, updateDiagonaly } from './gameLogic'
 
 describe('Board', () => {
 
