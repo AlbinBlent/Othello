@@ -42,6 +42,13 @@ export default class Board extends React.Component {
         />
         );
     }
+    
+    click() {
+        this.setState({
+            squares: Array(9).fill(Array(9).fill(null)),
+            xIsNext: true,
+        });
+    }
 
     render() {
         const winner = gameLogic.calculateWinner(this.state.squares);
@@ -64,6 +71,10 @@ export default class Board extends React.Component {
         <div>
             <div className="status">{status}</div>
             {rows}
+
+            <button className="reset" onClick={() => this.click()}>
+                Reset
+            </button>
         </div>
         );
     }
