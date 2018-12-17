@@ -1,7 +1,6 @@
-
 import React from 'react';
 import * as gameLogic from './gameLogic'
-import './index.css';
+import '../index.css';
 
 function Square(props) {
     return (
@@ -10,7 +9,6 @@ function Square(props) {
     </button>
     );
 }
-
 
 export default class Board extends React.Component {
     constructor(props) {
