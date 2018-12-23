@@ -1,7 +1,7 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import Home from '../Home'
-import Board from '../Othello/Board'
+import Home from '../components/startpage/home'
+import Board from '../othello/Board'
 
 // The Main component renders the provided
 // routes (provided that one matches). The /board
