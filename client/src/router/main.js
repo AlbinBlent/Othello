@@ -1,7 +1,8 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import Home from '../components/startpage/home'
-import Board from '../othello/Board'
+import Home from 'components/startpage/home'
+import Board from 'othello/board'
+import Lobby from 'components/lobby/Lobby'
 
 // The Main component renders the provided
 // routes (provided that one matches). The /board
@@ -13,6 +14,7 @@ const Main = () => (
     <Switch>
       <Route exact path='/' component={Home}/>
       <Route path='/board' component={Board}/>
+      <Route path='/lobby' component={Lobby}/>
     </Switch>
   </main>
 )
