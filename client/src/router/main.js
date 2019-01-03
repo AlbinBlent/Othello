@@ -1,7 +1,7 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import Home from 'components/startpage/home'
-import Board from 'othello/board'
+import Home from 'components/startpage/Home'
+import Board from 'components/othello/Board'
 import Lobby from 'components/lobby/Lobby'
 
 // The Main component renders the provided

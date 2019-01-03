@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from 'router/header'
+import Header from 'components/Header'
 import Main from 'router/main'
 
 const App = () => (
