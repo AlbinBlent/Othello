@@ -3,8 +3,10 @@ import React from "react";
 export default class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { name: "" };
-    this.state = { validInput: true };
+    this.state = {
+      name: "",
+      invalidInput: ""
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -14,22 +16,27 @@ export default class Home extends React.Component {
     this.setState({ name: event.target.value });
   }
 
-  handleSubmit() {
+  handleSubmit(event) {
+    event.preventDefault();
+
     const name = this.state.name;
     const letters = /^[A-Öa-ö]+$/;
-    if (name.length > 0 && name.match(letters)) {
+    if (name.length >= 3 && name.match(letters)) {
       this.props.history.push("/lobby", { name });
     } else {
-      this.setState({ validInput: false });
+      this.setState({
+        invalidInput:
+          "Please enter a name with at least 3 alphabetic characters!"
+      });
     }
   }
 
   render() {
-    if (this.state.validInput === true) {
-      return (
+    return (
+      <div>
         <form onSubmit={this.handleSubmit}>
           <label>
-            Enter name:
+            Enter a name:
             <input
               type="text"
               value={this.state.name}
@@ -38,9 +45,8 @@ export default class Home extends React.Component {
           </label>
           <input type="submit" value="Submit" />
         </form>
-      );
-    } else {
-      return <h1>FEL INPUT! (Hur gör jag detta snyggare..)</h1>;
-    }
+        <div className="invalidInput">{this.state.invalidInput}</div>
+      </div>
+    );
   }
 }
