@@ -1,6 +1,6 @@
 import React from 'react';
 import * as gameLogic from './gameLogic'
-import '../index.css';
+import 'index.css';
 
 function Square(props) {
     return (
@@ -41,7 +41,7 @@ export default class Board extends React.Component {
         );
     }
     
-    click() {
+    resetBoard() {
         this.setState({
             squares: Array(9).fill(Array(9).fill(null)),
             xIsNext: true,
@@ -70,7 +70,7 @@ export default class Board extends React.Component {
             <div className="status">{status}</div>
             {rows}
 
-            <button className="reset" onClick={() => this.click()}>
+            <button className="resetBoard" onClick={() => this.resetBoard()}>
                 Reset
             </button>
         </div>

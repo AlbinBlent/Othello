@@ -1,6 +1,6 @@
 import React from 'react'
-import Header from './Router/Header'
-import Main from './Router/Main'
+import Header from 'components/Header'
+import Main from 'router/main'
 
 const App = () => (
   <div>
